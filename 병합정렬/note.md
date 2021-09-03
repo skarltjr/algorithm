@@ -82,8 +82,8 @@ public class Main {
          * */
 
         if (i > middle) { // ㅁㅁ | ㅁㅁ  중 왼쪽 블럭 - i는 루프를 다 돈 상태
-            for (int l = j; j <= right; j++) {
-                sorted[k] = ints[j];
+            for (int l = j; l <= right; l++) {
+                sorted[k] = ints[l];
                 k++;
             }
         } else {  // j가 루프를 다 돈 상태
@@ -125,6 +125,5 @@ public class Main {
         }
     }
 }
-
 
 ```
