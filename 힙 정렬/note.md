@@ -15,7 +15,7 @@ public class Main {
 
     public static void main(String[] args) {
         // 최대힙 구조를 구성
-        for (int i = 1; i < heap.length; i++) { // 참고로 0부터 시작하면 /2를 못하고 1/2하면 어차피 0으로 들어가니까
+        for (int i = 1; i < heap.length; i++) { // 참고로 1/2하면 어차피 0으로 들어가니까
             int now = i;
             /** 1. 기본적인 힙을 구성한다.
              *  여기서 하고자 하는 것은 매번 새로운 노드를 추가할 때 마다 추가한 노드가 루트보다 크면 위로 올린다
