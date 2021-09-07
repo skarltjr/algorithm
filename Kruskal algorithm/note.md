@@ -108,7 +108,7 @@ class Edge implements Comparable<Edge>{
 
     @Override
     public int compareTo(Edge o) {
-        return o.dist > this.dist ? -1 : 1;
+        return o.dist > this.dist ? -1 : 1; // 참고로 음수면 두 개의 자리를 변경 근데 큐를 사용하고 오름차순으로 할거니까 
     }
 }
 
