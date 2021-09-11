@@ -68,3 +68,62 @@ public class Main {
 
 
 ```
+
+------
+
+```
+package algo;
+
+
+/**
+ * 다이나믹 프로그래밍  dp
+ * 하나의 문제를 한 번만 푼다
+ * 이 때 이전 값을 기억해두지 않으면 하나의 문제를 한 번만 풀지 않고 반복하여 비효율적 - memoization
+ * 규칙성을 찾아 점화식을 만들자
+ * */
+
+
+
+/**
+ * 2×n 직사각형을 1×2, 2×1과 2×2 타일로 채우는 방법의 수를 구하는 프로그램을 작성하시오.
+ * 규칙성을 찾고
+ * 앞에것을 기억해라
+ *
+ * 결국
+ * 1.
+ * n-1 + ㅁ
+ *       ㅁ
+ * 2.                   ->    2x1 위아래   /  2x2 통짜 1개 
+ * n-2 + ㅁㅁ                 ㅁㅁ           ㅁㅁ
+ *       ㅁㅁ                 ㅁㅁ           ㅁㅁ
+ *
+ * 3가지의 경우만 존재한다
+ * n = 1  1가지 ㅁ
+ *             ㅁ
+ * n = 2  ㅁ|ㅁ   ㅁㅁ 2x1 위아래   ㅁㅁ 2x2 1개  ==> 총 3가지
+ *        ㅁ|ㅁ   ㅁㅁ             ㅁㅁ
+ *
+* */
+public class Main {
+
+    static int[] result = new int[100];
+    public static void main(String[] args) {
+
+    }
+
+    public static int dp(int x) {
+        if (x == 1) {
+            return 1;
+        }
+        if (x == 2) {
+            return 3;
+        }
+        if (result[x] != 0) {
+            return result[x];
+        }
+        return result[x] = dp(x - 1) + 2 * dp(x - 2); // 그래서 여기에 *2
+    }
+}
+
+
+```
