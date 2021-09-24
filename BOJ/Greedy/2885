@@ -1,2 +1,40 @@
 ```
+package algo;
+
+
+import java.util.Scanner;
+
+public class Main {
+    /**
+     * 항상 2의 제곱 -> 2로 나눌 수 있다
+     * ㅁㅁㅁㅁ | ㅁㅁㅁㅁ
+     *
+     * 몇 번 초콜릿을 쪼개야 하는지와 사야하는 가장 작은 초콜릿의 크기( = 적어돋 이 크기의 초콜릿이어야한다)
+     * 2의 배수 중 먹고자하는 k개 보다 큰 최소 값을 구한다
+     * */
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+        int K = in.nextInt(); // 먹고자하는 k개
+        int size = 1;
+        while (size < K) {
+            size *= 2;
+        }
+        int originSize = size;
+
+        int resultCount = 0;
+        while (K > 0) {
+            if (size > K) {
+                size /= 2;
+                resultCount++;
+            } else {
+                K -= size;
+            }
+        }
+        System.out.println(originSize);
+        System.out.println(resultCount);
+    }
+}
+
+
 ```
