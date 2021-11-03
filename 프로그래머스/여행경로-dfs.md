@@ -11,6 +11,7 @@ import java.util.List;
  * ICN으로 출발하는 모든 경우를 만들고
  * 이를 sort해서
  * 맨 처음걸return
+ * 주의해야 했던 점 : visited나 result경우 dfs에서 반복문을 돌 때 이전의 영향을 받지 않기위해 초기화를 시켜줬어야했다
  */
 class Solution {
     static List<String> list = new ArrayList<>();
