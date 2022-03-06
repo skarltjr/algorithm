@@ -1,4 +1,6 @@
 - 그리디 :
   -  https://www.acmicpc.net/workbook/view/4380
   -  https://www.acmicpc.net/workbook/view/7320
-- 탐색 : https://www.acmicpc.net/workbook/view/1833
+- 탐색 :
+  -  https://www.acmicpc.net/workbook/view/1833
+  -  https://www.acmicpc.net/workbook/view/1983
