@@ -1,0 +1,68 @@
+```
+package algo;
+
+import java.io.IOException;
+import java.util.*;
+
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] parents = new int[n + 1];
+        boolean[] visited = new boolean[n + 1];
+        int[] dist = new int[n + 1];
+        int first = in.nextInt();
+        int second = in.nextInt();
+        int m = in.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            parents[i] = i;
+        }
+
+        for (int i = 1; i <= m; i++) {
+            int parent = in.nextInt();
+            int me = in.nextInt();
+            parents[me] = parent;
+        }
+
+        visited[first] = true;
+        Queue<Integer> q = new LinkedList<>();
+        q.add(first);
+
+
+        int bfs = bfs(q, visited, parents, second, dist);
+        System.out.println(bfs);
+    }
+
+    private static int bfs(Queue<Integer> q, boolean[] visited, int[] parents, int target, int[] dist) {
+        while (!q.isEmpty()) {
+            Integer poll = q.poll();
+
+            if (poll == target) {
+                return dist[poll];
+            }
+
+            for (int i = 1; i < parents.length; i++) {
+                //나의 부모에 대해
+                if (parents[poll] != poll && visited[parents[poll]] == false) {
+                    q.add(parents[poll]);
+                    visited[parents[poll]] = true;
+                    dist[parents[poll]] = dist[poll] + 1;
+                }
+                //나의 자식에 대해
+                if (parents[i] == poll && visited[i] == false) {
+                    q.add(i);
+                    visited[i] = true;
+                    dist[i] = dist[poll] + 1;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+
+
+
+```
