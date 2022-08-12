@@ -1,0 +1,4 @@
+```
+동명 동물 수 찾기
+SELECT a.NAME,COUNT(a.NAME) from ANIMAL_INS as a GROUP BY a.NAME HAVING COUNT(a.NAME)>1 ORDER by a.NAME 
+```
